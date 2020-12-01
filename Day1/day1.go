@@ -1,12 +1,12 @@
 package main
 
 //GOALS
-//1 - Get it running - 
-//2 - Get it running correctly - 
-//3 - Get it running efficiently - tbd 
+//1 - Get it running -
+//2 - Get it running correctly -
+//3 - Get it running efficiently - tbd
 
-//In this list, the two expense entries that sum to 2020.
-//Multiplying them together produces the correct answer is 514579.
+//In this input list, there are two expense entries that sum to 2020.
+//Multiplying them together produces the correct answer.
 
 import (
 	"fmt"
