@@ -1,8 +1,8 @@
 package main
 
-//GOAL
-//1 - Get it running - check
-//2 - Get it running correctly - check
+//GOALS
+//1 - Get it running - 
+//2 - Get it running correctly - 
 //3 - Get it running efficiently - tbd 
 
 //In this list, the two expense entries that sum to 2020.
