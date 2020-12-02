@@ -1,9 +1,10 @@
 package main
 
-//GOALS
-//1 - Get it running -
-//2 - Get it running correctly -
-//3 - Get it running efficiently - tbd
+/*
+1 - Get it running -   
+2 - Get it running correctly & submit -   
+3 - Refactor - tbd
+*/
 
 //In this input list, there are two expense entries that sum to 2020.
 //Multiplying them together produces the correct answer.
@@ -37,16 +38,15 @@ func main() {
 
 	lines := GetLines("./puzzle_input.txt")
 	expenses := ConvertToInt(lines)
-	required_sum := 2020
-	var expense_product int
+	requiredSum := 2020
+	var expenseProduct int
 
 	for i1, _ := range expenses {
 		for i2, _ := range expenses {
 			for i3 := i2 + 1; i3 < len(expenses); i3++ {
-				if expenses[i1]+expenses[i2]+expenses[i3] == required_sum {
-					expense_product = expenses[i1] * expenses[i2] * expenses[i3]
+					expenseProduct = expenses[i1] * expenses[i2] * expenses[i3]
 					fmt.Println("Expense Values are", expenses[i1], expenses[i2], expenses[i3])
-					fmt.Println("Product is", expense_product)
+					fmt.Println("Product is", expenseProduct)
 					return
 				}
 			}
