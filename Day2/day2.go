@@ -73,7 +73,12 @@ func main() {
 		fmt.Println("letterCount <= passwordPolicyHigh", letterCount <= passwordPolicyHigh)
 		*/
 
-		/* Part 2 */
+		/* Part 2
+		Each policy actually describes two positions in the password, where 1 means the first character, 2 means the second character, and so on.
+		(Exactly one of these positions must contain the given letter.
+		Other occurrences of the letter are irrelevant for the purposes of policy enforcement.
+		*/
+
 		validPositionCount := 0
 		for i, pwLetter := range password {
 
