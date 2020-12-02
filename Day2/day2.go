@@ -1,9 +1,9 @@
 package main
 
 /*
-1 - Get it running -   
-2 - Get it running correctly & submit -   
-3 - Refactor - tbd
+1 - Get it running - check
+2 - Get it running correctly & submit - check - Yay!
+3 - Refactor - tbd  - It's still ugly, I know...
 */
 
 /*
@@ -14,7 +14,7 @@ TASK:
 
 Hmm, needed steps seem to be:
  read the file/get lines
- for each line 
+ for each line
   - assign to a variable - password policy length 3, letter length 1, password length varies [range based slicing & split?]
   - convert policy to ints - lowest_num / highest_num
   - check password according to policy
@@ -26,8 +26,8 @@ Refactor:
 import (
 	"fmt"
 	"io/ioutil"
-	"strings"
 	"strconv"
+	"strings"
 )
 
 func main() {
@@ -36,19 +36,19 @@ func main() {
 	validPasswordCount := 0
 
 	for _, line := range lines {
-	
+
 		fields := strings.Split(line, " ")
 		//fmt.Println(fields[0])
 		//fmt.Println(fields[1])
 		//fmt.Println(fields[2])
-		
-		passwordPolicy := strings.Split(fields[0],"-")
-		passwordPolicyLow :=  ConvertToInt(passwordPolicy[0])
-		passwordPolicyHigh :=  ConvertToInt(passwordPolicy[1])
+
+		passwordPolicy := strings.Split(fields[0], "-")
+		passwordPolicyLow := ConvertToInt(passwordPolicy[0])
+		passwordPolicyHigh := ConvertToInt(passwordPolicy[1])
 		letter := fields[1]
 		password := fields[2]
 
-	    //fmt.Println("passwordPolicyLow is", passwordPolicyLow)
+		//fmt.Println("passwordPolicyLow is", passwordPolicyLow)
 		//fmt.Println("passwordPolicyHigh is", passwordPolicyHigh)
 		//fmt.Println("letter is", letter[0:1])
 		//fmt.Println("password is", password)
@@ -58,14 +58,14 @@ func main() {
 		letterCount := 0
 
 
-		for _, pwLetter := range password {			
+		for _, pwLetter := range password {
 			if string(pwLetter) == letter[0:1] {
 				letterCount += 1
 			}
-		} 
-		
-		fmt.Println("letterCount is", letterCount)			
-		
+		}
+
+		fmt.Println("letterCount is", letterCount)
+
 		if (letterCount >= passwordPolicyLow) && (letterCount <= passwordPolicyHigh) {
 			validPasswordCount ++
 		}
@@ -75,19 +75,19 @@ func main() {
 
 		/* Part 2 */
 		validPositionCount := 0
-		for i, pwLetter := range password {			
-    	
+		for i, pwLetter := range password {
+
 			if (string(pwLetter) == letter[0:1]) && (i+1 == passwordPolicyLow) {
 				validPositionCount += 1
 			}
 			if (string(pwLetter) == letter[0:1]) && (i+1 == passwordPolicyHigh) {
-				validPositionCount =  validPositionCount + 1	
+				validPositionCount = validPositionCount + 1
 				//fmt.Println("validPositionCount is", validPositionCount)
-			}			
-		} 
+			}
+		}
 		if validPositionCount == 1 {
-			validPasswordCount ++
-		}	
+			validPasswordCount++
+		}
 	}
 	fmt.Println("validPasswordCount is", validPasswordCount)
 }
@@ -100,4 +100,4 @@ func GetLines(filename string) []string {
 func ConvertToInt(field string) int {
 	digit, _ := strconv.Atoi(field)
 	return digit
-	}
+}
