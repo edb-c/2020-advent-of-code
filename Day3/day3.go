@@ -34,7 +34,7 @@ func main() {
 	// fmt.Println("Length", len(lines))
 	for i, aLine := range lines {
 		//fmt.Println("i", i, treeSpotX,treeSpotY )
-			if string(lines[i][treeSpotY]) == isTree {
+			if  string(lines[i][treeSpotY]) == isTree {
 				treeCount++
 				fmt.Println(string(lines[i]), i,",",treeSpotY,"   For treeSpotX, treeSpotY", treeSpotX, treeSpotY,"Tree",string(lines[i][treeSpotY]) )
 			} 
